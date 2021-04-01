@@ -28,7 +28,14 @@ while is_on == True:
     if abs(ball.ycor()) > 295:
         ball.bounce_y()
 
-    if ball.distance(paddle_1) < 50  and abs(ball.xcor()) > 320 or ball.distance(paddle_2) and abs(ball.xcor()) > 320: 
+    if ball.xcor() > 395:
+        ball.reset_position()
+
+    if ball.xcor() < -395:
+        ball.reset_position()
+
+    if (ball.distance(paddle_1) < 55  and ball.xcor() > 310) or (ball.distance(paddle_2) < 55 and ball.xcor() <-310): 
         ball.bounce_x()
     
+
 screen.exitonclick()
