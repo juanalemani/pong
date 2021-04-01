@@ -24,8 +24,9 @@ while is_on == True:
     time.sleep(0.1)
     screen.update()
     ball.move()
-
-
+    
+    if abs(ball.ycor()) > 295:
+        ball.bounce()
 
 
 screen.exitonclick()
